@@ -7,3 +7,10 @@ function fillArray() {
     cardContentArray.push(bandsMock);
   }
 }
+
+function createCardContent() {
+  fillArray();
+  cardContentArray.sort(function () {
+    return Math.random() - 0.5;
+  });
+}
