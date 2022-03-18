@@ -16,3 +16,5 @@ const bandsMock = [
   "Tonight Alive",
   "The Offspring"
 ];
+
+export {bandsMock};
