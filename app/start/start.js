@@ -20,3 +20,5 @@ function createCard() {
   let card = document.createElement("div");
   card.appendChild(cardContainer);
 }
+
+document.getElementById("logo-banda").addEventListener("click", holi);

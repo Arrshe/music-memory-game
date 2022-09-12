@@ -6,15 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emory</title>
   </head>
-  <body>
+  <body onload="createCardList()">
     <header>
       <h1 class="matchflat__title">Matchflat</h1>
     </header>
     <main>
-      <div id="cardContainer"></div>
+      <section id="cardContainer"></section>
     </main>
     <footer>
       <p>&copy;María Infantes Lacal. All rights reserved 2022.</p>
     </footer>
+    <script>
+      function createCard() {
+        let card = document.createElement("li");
+        card.classList.add("matchflat__card");
+          document.getElementById("cardlist").appendChild(card);
+      }
+
+      function createCardList(){
+        let cardlist = document.createElement("ul");
+        cardlist.classList.add("matchflat__cardlist");
+        cardlist.setAttribute("id", "cardlist");
+        document.getElementById("cardContainer").appendChild(cardlist);
+
+        createCard();
+      }
+  </script>
   </body>
 </html>
