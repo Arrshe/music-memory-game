@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emory</title>
   </head>
-  <body onload="createCardList()">
+  <body onload="startGame()">
     <header>
       <h1 class="matchflat__title">Matchflat</h1>
     </header>
@@ -17,20 +17,74 @@
       <p>&copy;María Infantes Lacal. All rights reserved 2022.</p>
     </footer>
     <script>
-      function createCard() {
-        let card = document.createElement("li");
-        card.classList.add("matchflat__card");
-          document.getElementById("cardlist").appendChild(card);
+      const bandsMock = [
+        "Paramore",
+        "My Chemical Romance",
+        "Blink 182",
+        "SUM 41",
+        "Avril Lavigne",
+        "All Time Low",
+        "Panic! at the disco",
+        "Simple Plan",
+        "Fall Out Boy",
+        "The All-American Rejects",
+        "Yellowcard",
+        "A Day to Remember",
+        "Rise Aganist",
+        "Green Day",
+        "Tonight Alive",
+        "The Offspring",
+      ];
+
+      let cardContentArray = [];
+      let cardContainer = document.getElementById("cardContainer");
+
+      function fillArray() {
+        for (let i = 0; i < 2; i++) {
+          bandsMock.forEach((band) => {
+            cardContentArray.push(band);
+          });
+        }
       }
 
-      function createCardList(){
+      function createCardContent() {
+        fillArray();
+        cardContentArray.sort(function () {
+          return Math.random() - 0.5;
+        });
+      }
+
+      function createCard(cardContent, cardId) {
+        let card = document.createElement("li");
+        card.classList.add("matchflat__card");
+        card.setAttribute("id", `${cardId}`);
+        document.getElementById("cardlist").appendChild(card);
+        let content = document.createElement("p");
+        content.classList.add("matchflat__cardcontent");
+        content.innerHTML = cardContent;
+        document.getElementById(`${cardId}`).appendChild(content);
+      }
+
+      function createCardList() {
         let cardlist = document.createElement("ul");
         cardlist.classList.add("matchflat__cardlist");
         cardlist.setAttribute("id", "cardlist");
-        document.getElementById("cardContainer").appendChild(cardlist);
-
-        createCard();
+        cardContainer.appendChild(cardlist);
       }
-  </script>
+
+      function fillCards() {
+        let cardId = 0;
+        cardContentArray.forEach((cardContent) => {
+          createCard(cardContent, cardId);
+          cardId++;
+        });
+      }
+
+      function startGame() {
+        createCardContent();
+        createCardList();
+        fillCards();
+      }
+    </script>
   </body>
 </html>
