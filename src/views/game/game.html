@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
     <title>Emory</title>
   </head>
   <body onload="startGame()">
     <header>
-      <h1 class="matchflat__title">Matchflat</h1>
+      <h1 class="emory__title">emory</h1>
     </header>
     <main>
       <section id="cardContainer"></section>
@@ -20,20 +21,13 @@
       const bandsMock = [
         "Paramore",
         "My Chemical Romance",
-        "Blink 182",
-        "SUM 41",
         "Avril Lavigne",
-        "All Time Low",
         "Panic! at the disco",
         "Simple Plan",
         "Fall Out Boy",
-        "The All-American Rejects",
-        "Yellowcard",
         "A Day to Remember",
         "Rise Aganist",
         "Green Day",
-        "Tonight Alive",
-        "The Offspring",
       ];
 
       let cardContentArray = [];
@@ -56,18 +50,18 @@
 
       function createCard(cardContent, cardId) {
         let card = document.createElement("li");
-        card.classList.add("matchflat__card");
+        card.classList.add("emory__card");
         card.setAttribute("id", `${cardId}`);
         document.getElementById("cardlist").appendChild(card);
         let content = document.createElement("p");
-        content.classList.add("matchflat__cardcontent");
+        content.classList.add("emory__cardcontent");
         content.innerHTML = cardContent;
         document.getElementById(`${cardId}`).appendChild(content);
       }
 
       function createCardList() {
         let cardlist = document.createElement("ul");
-        cardlist.classList.add("matchflat__cardlist");
+        cardlist.classList.add("emory__cardlist");
         cardlist.setAttribute("id", "cardlist");
         cardContainer.appendChild(cardlist);
       }
