@@ -1,0 +1,23 @@
+{
+  "name": "scss-to-css",
+  "version": "1.0.0",
+  "description": "Music memory card game",
+  "main": "index.js",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded assets/scss:assets/css",
+    "sass-prod": "sass --no-source-map --style=compressed assets/scss:assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arrshe/music-memory-game.git"
+  },
+  "author": "arrshe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arrshe/music-memory-game/issues"
+  },
+  "homepage": "https://github.com/Arrshe/music-memory-game#readme",
+  "devDependencies": {
+    "sass": "^1.54.9"
+  }
+}
