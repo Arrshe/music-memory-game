@@ -1,6 +1,6 @@
-// @import "core/core";
 // @import "mixins/mixins";
 @import "./assets/variables/variables";
+@import "./assets/core/core";
 
 body {
   background: rgb(255, 0, 168);
@@ -13,7 +13,6 @@ body {
 
 .emory {
   &__title {
-    font-family: $font-family-default;
     font-size: $font-size-xxl;
     color: rgb(39, 39, 39);
     display: flex;
@@ -52,7 +51,6 @@ body {
   }
 
   &__cardcontent {
-    font-family: $font-family-default;
     text-align: center;
     color: $color-dark-pink;
     text-transform: uppercase;

@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Arrshe/music-memory-game#readme",
   "devDependencies": {
     "sass": "^1.54.9"
+  },
+  "dependencies": {
+    "normalize-scss": "^7.0.1"
   }
 }
