@@ -15,7 +15,7 @@
       <section id="cardContainer"></section>
     </main>
     <footer>
-      <p>&copy;María Infantes Lacal. All rights reserved 2022.</p>
+      <p>&copy; María Infantes Lacal. All rights reserved 2022.</p>
     </footer>
     <script>
       const bandsMock = [
@@ -49,18 +49,22 @@
       }
 
       function createCard(cardContent, cardId) {
-        let card = document.createElement("li");
+        let cardContainer = document.createElement("li");
+        cardContainer.classList.add("emory__cardContainer");
+        cardContainer.setAttribute("id", `cardContainer-${cardId}`);
+        document.getElementById("cardlist").appendChild(cardContainer);
+        let card = document.createElement("div");
         card.classList.add("emory__card");
-        card.setAttribute("id", `${cardId}`);
-        document.getElementById("cardlist").appendChild(card);
+        card.setAttribute("id", `card-${cardId}`);
+        document.getElementById(`cardContainer-${cardId}`).appendChild(card);
         let front =  document.createElement("div");
         front.classList.add("emory__cardface--front");
         front.setAttribute("id", `front-${cardId}`);
-        document.getElementById(`${cardId}`).appendChild(front);
+        document.getElementById(`card-${cardId}`).appendChild(front);
         let back =  document.createElement("div");
         back.classList.add("emory__cardface--back");
         back.setAttribute("id", `back-${cardId}`);
-        document.getElementById(`${cardId}`).appendChild(back);
+        document.getElementById(`card-${cardId}`).appendChild(back);
         let content = document.createElement("p");
         content.classList.add("emory__cardcontent");
         content.innerHTML = cardContent;
