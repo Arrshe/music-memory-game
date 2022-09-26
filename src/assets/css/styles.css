@@ -223,6 +223,7 @@ body {
   height: 50px;
 }
 .emory__copyright {
+  font-size: 12px;
   text-align: center;
   margin: 1rem auto;
 }
