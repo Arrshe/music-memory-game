@@ -188,9 +188,6 @@ body {
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
-.emory__card:hover {
-  transform: rotateY(180deg);
-}
 .emory__cardface--front, .emory__cardface--back {
   position: absolute;
   width: 100%;
@@ -228,6 +225,10 @@ body {
 .emory__copyright {
   text-align: center;
   margin: 1rem auto;
+}
+
+.rotated {
+  transform: rotateY(180deg);
 }
 
 /*# sourceMappingURL=styles.css.map */
