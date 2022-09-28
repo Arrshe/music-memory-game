@@ -1,4 +1,4 @@
-import { showCardContent } from "./actions.js";
+import { hideCardContent, showCardContent } from "./actions.js";
 
 const bandsMock = [
   "Paramore",
@@ -40,7 +40,11 @@ function createCard(cardContent, cardId) {
   card.setAttribute("id", `card-${cardId}`);
   document.getElementById(`cardContainer-${cardId}`).appendChild(card);
   card.onclick = function () {
-    showCardContent(`card-${cardId}`);
+    if (card.classList.contains("show")) {
+      hideCardContent(`card-${cardId}`);
+    } else {
+      showCardContent(`card-${cardId}`);
+    }
   };
   let front = document.createElement("div");
   front.classList.add("emory__cardface--front");
